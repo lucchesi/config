@@ -1,13 +1,13 @@
 ﻿set nocompatible
 " source $VIMRUNTIME/vimrc_example.vim
  source $VIMRUNTIME/mswin.vim
-behave mswin
+behave mswin " I like ctrl-c
 set backspace=indent,eol,start
 
-" if has('gui_running')
-" 	set guifont=Courier_New:h10
-"	set guifontwide=MS_Gothic:h10
-" endif
+if has("win32") && has('gui_running')
+	set guifont=Courier_New:h10
+	set guifontwide=MS_Gothic:h10
+endif
 
 
 
