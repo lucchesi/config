@@ -6,9 +6,12 @@ set backspace=indent,eol,start
 
 " if has('gui_running')
 " 	set guifont=Courier_New:h10
+"	set guifontwide=MS_Gothic:h10
 " endif
 
 
+
+" Vundle: instala e atualiza plugins automaticamente
 set rtp+=~/.vim/vundle.git/ 
  call vundle#rc()
 
@@ -30,9 +33,6 @@ set rtp+=~/.vim/vundle.git/
 
  " NOTE: if some plugins fail to work, put the config *before* line:
  " filetype plugin indent on 
-
-
-
 
 
 
@@ -79,17 +79,46 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
+" Também com as setas
+nnoremap <up> gk
+nnoremap <down> gj
+
+" comandos funfando no IME
+nnoremap ｘ x
+nnoremap ｐ p
+nnoremap お o
+nnoremap ｙ y
+nnoremap ｒ r
+
+nnoremap ｈ h
+nnoremap ｊ j
+nnoremap ｋ k
+nnoremap ｌ l
+
+
 " Seta o encoding
-set bomb 
+" set bomb 
+" set encoding=utf-8
+" set enc=utf-8
+" set fileencodings=utf-8,iso-8859-1,ansi
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8 bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
  
-" Linhas longas
-match ErrorMsg '\%>80v.\+'
- 
-		
+
 
 
 " Marca de vermelho espaço sobrando ao final da linha
-"  highlight ExtraWhitespace ctermbg=red guibg=red
-"         autocmd InsertEnter * match ExtraWhitespace /\%(.\)\@>\s\+\%#\@<!$/
-"         autocmd InsertLeave * match ExtraWhitespace /\%(.\)\@>\s\+$/
+" highlight ExtraWhitespace ctermbg=red guibg=red
+"        autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+"        autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" (tb marca linhas vazias, que eu quero manter identadas)
 
+
+" Marca linhas com mais de 80 chars
+match ErrorMsg '\%>80v.\+'

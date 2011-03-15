@@ -10,6 +10,32 @@ if has('gui_running')
 endif
 
 
+
+" Vundle: instala e atualiza plugins automaticamente
+set rtp+=~/.vim/vundle.git/ 
+ call vundle#rc()
+
+ " Bundles:
+ Bundle "L9"
+ Bundle "FuzzyFinder"
+ Bundle "git://git.wincent.com/command-t.git"
+ Bundle "snipMate"
+ Bundle "snippets.vim"
+ Bundle "easytags.vim"
+ Bundle "taglist.vim"
+ Bundle "DoxyGen-Syntax"
+ Bundle "Conque-Shell"
+ Bundle "matchit.zip"
+ Bundle "Nekthuth"
+ Bundle "slimv.vim"
+ Bundle "SuperTab"
+ Bundle "Shell.vim"
+
+ " NOTE: if some plugins fail to work, put the config *before* line:
+ " filetype plugin indent on 
+
+
+
 " Syntax highlighting do faiska
 au BufRead,BufNewFile *.fsk set filetype=faiska
 syntax on
