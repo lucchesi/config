@@ -1,4 +1,4 @@
-set nocompatible
+﻿set nocompatible
 " source $VIMRUNTIME/vimrc_example.vim
  source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -7,6 +7,33 @@ set backspace=indent,eol,start
 " if has('gui_running')
 " 	set guifont=Courier_New:h10
 " endif
+
+
+set rtp+=~/.vim/vundle.git/ 
+ call vundle#rc()
+
+ " Bundles:
+ Bundle "L9"
+ Bundle "FuzzyFinder"
+ Bundle "git://git.wincent.com/command-t.git"
+ Bundle "snipMate"
+ Bundle "snippets.vim"
+ Bundle "easytags.vim"
+ Bundle "taglist.vim"
+ Bundle "DoxyGen-Syntax"
+ Bundle "Conque-Shell"
+ Bundle "matchit.zip"
+ Bundle "Nekthuth"
+ Bundle "slimv.vim"
+ Bundle "SuperTab"
+ Bundle "Shell.vim"
+
+ " NOTE: if some plugins fail to work, put the config *before* line:
+ " filetype plugin indent on 
+
+
+
+
 
 
 " Syntax highlighting do faiska
