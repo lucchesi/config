@@ -24,6 +24,7 @@ set rtp+=~/.vim/vundle.git/
  Bundle "easytags.vim"
  Bundle "taglist.vim"
  Bundle "DoxyGen-Syntax"
+ Bundle "DoxygenToolkit.vim"
  Bundle "Conque-Shell"
  Bundle "matchit.zip"
  Bundle "Nekthuth"
